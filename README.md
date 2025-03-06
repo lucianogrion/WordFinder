@@ -3,7 +3,7 @@ Challenge for WordFinder
 ![Diagrama del WordFinder de Expresión](backgroung.png)
 
 # Word Search in Character Matrix
-# Word Search in Character Matrix
+
 
 ## Description
 This project provides a C# class that efficiently searches for words from a large word stream within a given character matrix. The class is designed to handle high-performance lookups and can be used in various applications such as word games and text analysis.
