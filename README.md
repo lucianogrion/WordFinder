@@ -1,5 +1,7 @@
 # WordFinder
 Challenge for WordFinder
+![Diagrama del WordFinder de Expresión](backgroung.png)
+
 # Word Search in Character Matrix
 
 ## Description
