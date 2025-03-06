@@ -68,6 +68,4 @@ Feel free to submit pull requests or open issues to improve this project.
 ## Author
 Lgrion
 
-## Author
-lgrion
 
