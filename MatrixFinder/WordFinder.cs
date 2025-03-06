@@ -112,54 +112,45 @@ namespace MatrixFinder
             //make a generic proc (sending parameters)
 
             //search for the word horizontally
-            int offset = 0;
-            bool founded = true;
-            foreach (char letter in word)
-            {
-                if (position.x + offset > _matrix[0].Length - 1)
-                {
-                    founded = false; break;
-                }
-
-                if (_matrix[position.x+ offset][position.y] != letter)
-                {
-                    founded = false; break;
-                }
-                offset++;
-            }
-
-            if (founded)
-            {
-                count++;
-            }
-            
-            //search for the word vertically
-            offset = 0;
-            founded = true;
-            if (true)
-            {
-                foreach (char letter in word)
-                {
-                    if (position.y + offset > _matrix[0].Length-1)
-                    {
-                        founded = false; break;
-                    }
-
-                    if (_matrix[position.x][position.y + offset] != letter)
-                    {
-                        founded = false; break;
-                    }
-                    offset++;
-                }
-            }
-            
-
-            if (founded)
-            {
-                count++;
-            }
+            count += SearchForWord(word,true, position);
+            count += SearchForWord(word,false, position);
 
             return count;
+        }
+
+        private int SearchForWord(string word,bool Horizontal, Position position)
+        {
+            int Offsetx = 0;
+            int Offsety = 0;
+            bool founded = true;
+            
+            foreach (char letter in word)
+            {
+                
+                if ((position.x + Offsetx > _matrix[0].Length - 1)||
+                    (position.y + Offsety > _matrix[0].Length - 1)
+                    )
+                {
+                    founded = false; break;
+                }
+
+
+                if (_matrix[position.x + Offsetx][position.y+Offsety] != letter)
+                {
+                    founded = false; break;
+                }
+                if (Horizontal)
+                {
+                    Offsetx++;
+                } else
+                {
+                    Offsety++;
+                }
+                
+            }
+
+            return founded ? 1 : 0;
+           
         }
     }
 }
