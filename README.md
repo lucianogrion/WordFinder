@@ -3,9 +3,14 @@ Challenge for WordFinder
 ![Diagrama del WordFinder de Expresión](backgroung.png)
 
 # Word Search in Character Matrix
+# Word Search in Character Matrix
 
 ## Description
 This project provides a C# class that efficiently searches for words from a large word stream within a given character matrix. The class is designed to handle high-performance lookups and can be used in various applications such as word games and text analysis.
+
+## Project Structure
+- **MatrixFinder**: Main project containing the word search logic.
+- **TestingFinder**: Unit testing project for verifying functionality.
 
 ## Features
 - Efficient searching of words in a character matrix
@@ -24,8 +29,8 @@ char[,] matrix = {
 
 List<string> wordsToFind = new List<string> {"THIS", "TEST", "WORDS"};
 
-var searcher = new WordFinder(matrix);
-List<string> foundWords = searcher.Find(wordsToFind);
+WordSearch searcher = new WordSearch(matrix);
+List<string> foundWords = searcher.FindWords(wordsToFind);
 
 foreach (var word in foundWords)
 {
@@ -62,6 +67,9 @@ This project is licensed under the MIT License.
 
 ## Contributions
 Feel free to submit pull requests or open issues to improve this project.
+
+## Author
+Lgrion
 
 ## Author
 lgrion
