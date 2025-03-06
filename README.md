@@ -20,22 +20,19 @@ This project provides a C# class that efficiently searches for words from a larg
 ## Usage
 ### Example
 ```csharp
-char[,] matrix = {
-    {'T', 'H', 'I', 'S'},
-    {'I', 'S', 'A', 'T'},
-    {'E', 'S', 'T', 'W'},
-    {'O', 'R', 'D', 'S'}
-};
+string[] matrix = { "abcdc", "fgwio", "chill", "pqnsd", "uvdxy" };
+string[] wordStream = { "cold", "wind", "snow", "chill" };
 
-List<string> wordsToFind = new List<string> {"THIS", "TEST", "WORDS"};
+WordFinder wordFinder = new WordFinder(matrix);
 
-WordSearch searcher = new WordSearch(matrix);
-List<string> foundWords = searcher.FindWords(wordsToFind);
+var result = wordFinder.Find(wordStream);
 
-foreach (var word in foundWords)
+
+foreach (var item in result)
 {
-    Console.WriteLine("Found: " + word);
+    Console.WriteLine(item);
 }
+
 ```
 
 ## Implementation
